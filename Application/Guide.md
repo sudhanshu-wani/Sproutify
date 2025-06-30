@@ -1,6 +1,6 @@
 # Sproutify Emotion Detection - Setup Guide
 
-Welcome to the Sproutify Emotion Detection project! This guide will help you set up everything from scratch.
+This guide will help you set up everything from scratch.
 
 ---
 
