@@ -79,45 +79,68 @@ Welcome to the Sproutify Emotion Detection project! This guide will help you set
 
 ---
 
-## 5. Running the Applications
+## 5. Running the Application
 
-You need to run **two separate servers**: one for the API and one for the web app.
+The app now runs as a **single server** with both the web interface and emotion detection API integrated!
 
-### a. Start the Emotion API
+### Start the Application
 - In the terminal, run:
-  ```
-  python emotion_api.py
-  ```
-- This will start the backend API at `http://127.0.0.1:5001/detect`
-
-### b. Start the Web App
-- Open a **new terminal** (keep the API running in the first one):
   ```
   python app.py
   ```
-- This will start the web app at `http://127.0.0.1:5000/`
+- This will start the complete application at `http://127.0.0.1:5000/`
 
-### c. Open in Browser
+### Open in Browser
 - Go to `http://127.0.0.1:5000/` in your web browser.
-- Upload a photo and see the emotion detection in action!
+- You'll be redirected to the login page if not authenticated.
+- **Register** a new account or **login** with existing credentials.
+- After authentication, you can upload a photo and see the emotion detection in action!
 
 ---
 
-## 6. VSCode Tips
+## 6. Authentication Features
+
+The app now includes a complete authentication system:
+
+### Registration
+- Visit `http://127.0.0.1:5000/register` to create a new account
+- Username must be at least 3 characters long
+- Password must be at least 6 characters long
+- Passwords are securely hashed using Werkzeug
+
+### Login
+- Visit `http://127.0.0.1:5000/login` to access your account
+- Use your registered username and password
+- You'll be redirected to the emotion detection page after successful login
+
+### Logout
+- Click the "Logout" button in the top-right corner of the main page
+- You'll be redirected back to the login page
+
+### Security Features
+- Password hashing for secure storage
+- Session management with Flask-Login
+- Protected routes that require authentication
+- Automatic redirect to login for unauthenticated users
+
+---
+
+## 7. VSCode Tips
 - Install the **Python extension** (search for "Python" in the Extensions sidebar).
 - VSCode will prompt you to select a Python interpreter. Choose the one from your `venv` folder.
 - You can set breakpoints and debug your code using the built-in debugger.
 
 ---
 
-## 7. Troubleshooting
+## 8. Troubleshooting
 - If you get errors about missing packages, make sure your virtual environment is activated and you ran `pip install -r requirements.txt`.
 - If you see `ModuleNotFoundError`, double-check your Python interpreter in VSCode (bottom left corner).
+- For authentication issues, try clearing your browser cookies or using incognito mode.
 - For any other issues, try searching the error message online or ask your friend for help!
 
 ---
 
-## 8. Deactivating the Virtual Environment
+## 9. Deactivating the Virtual Environment
 - When you're done, you can deactivate the virtual environment by running:
   ```
   deactivate
